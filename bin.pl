@@ -52,7 +52,7 @@ sub http_post_processor {
                 print FILEHANDLER $file_content_data;
                 print LOGHANDLER "POST Data: $file_content_data\n";
                 close FILEHANDLER;
-                $http_response_body .= "http://".SERVER_HOSTNAME."/".CGI_LOCATION."/".$script_name."?id=".$content_digest."\n";
+                $http_response_body .= "https://".SERVER_HOSTNAME."/".CGI_LOCATION."/".$script_name."?id=".$content_digest."\n";
         }else{
                 http_error_handler("AUTH");
         }
@@ -127,6 +127,6 @@ sub _populate_error_msg {
 }
 
 __END__
-ID!<h1><center>Target Bin-ID Does Not Exist, Recheck your ID</center></h1>
-AUTH!<h1><center>You are NOT authorized</center></h1>
-UNKNOWN!<h1><center>Do not send invalid data to the CGI Gateway</center></h1>
+ID!Target Bin-ID Does Not Exist, Recheck your ID
+AUTH!You are NOT authorized
+UNKNOWN!Do not send invalid data to the CGI Gateway

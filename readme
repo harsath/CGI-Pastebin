@@ -12,7 +12,8 @@
 		 curl -H "X-Bin-Auth: Secure-Password" --data-binary "@${1}" https://cname.mydomain.tld/cgi-bin/bin.pl
 	    }
 
-	Since the HTTP request, which contains the Auth header, is sent through plaintext-HTTP, I recommend TLS on Transport.
+	Since the HTTP request, which contains the Auth header, is sent through plaintext-HTTP, 
+	I recommend TLS on Transport.
 	
 	Required packages:
 		$ sudo apt update -y && apt install nginx fcgiwrap -y
