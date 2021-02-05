@@ -1,13 +1,15 @@
-	CGI-Pastebin is my personal use pastebin. It's a CGI script written in Perl.
+	CGI-Pastebin is my personal use pastebin. I host this CGI application on my private server for internal use.
+	It's a CGI script written in Perl.
 	It's only tested for personal use, I do not recommend anyone to use this in a production server.
-	You can use it as your personal pastebin, ofcourse
+	You can use it as your personal pastebin for fun, ofcourse
 
 	How it's implemented?
-	(*) Not everyone can just send a POST request to the server which hosts this CGI script. 
+	(*) Not everyone can just send a POST request to the server which hosts this CGI script.
 	(*) To make the CGI script "accept" your file/data as a potential paste to the server, You must
 	    provide an Authentication header `X-Bin-Auth` with value set by the admin(or you).
 
 	You can put this on your .bashrc or .zshrc to make an alias to paste the file to the CGI server.
+	    #Usage: $ pastebin FILENAME
 	    pastebin(){
 		 curl -H "X-Bin-Auth: Secure-Password" --data-binary "@${1}" https://cname.mydomain.tld/cgi-bin/bin.pl
 	    }
@@ -16,6 +18,6 @@
 	I recommend TLS on Transport.
 	
 	Required packages:
-		$ sudo apt update -y && apt install nginx fcgiwrap -y
+		$ sudo apt update -y && sudo apt install nginx fcgiwrap -y
 
 	[!] My implementation is too far from perfect, so feel free to send PRs and open a ticket on "Issues"

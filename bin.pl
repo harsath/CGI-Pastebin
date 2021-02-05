@@ -3,7 +3,7 @@ use warnings;
 use strict;
 use constant BIN_DUMP_PATH => "/tmp/dump_bin";
 use constant SERVER_HOSTNAME => "cname.mydomain.tld";
-use constant CGI_LOCATION => "cgi-bin";
+use constant CGI_LOCATION => "cgi-gateway";
 use Digest::MD5 qw/md5_base64/;
 use File::Basename;
 
@@ -21,7 +21,7 @@ my $http_id_error_msg = "";
 my $http_auth_error_msg = "";
 my $http_unknown_error_msg = "";
 
-open (LOGHANDLER, ">", "/usr/lib/cgi-bin/log.txt") or system("logger Log ERROR $!");
+open (LOGHANDLER, ">", "/usr/lib/cgi-gateway/log.txt") or system("logger Log ERROR $!");
 
 unless(-d BIN_DUMP_PATH){ mkdir(BIN_DUMP_PATH); }
 
